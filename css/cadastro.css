@@ -1,0 +1,39 @@
+.inputs{
+	display: inline-block;
+    padding: 5px 5px;
+    margin: 5px 0px;
+    font-size: 13px;
+    min-width: 300px;
+}
+
+.titulo{
+	font-size: 24px;
+	color: #000000;
+}
+
+.descricao{
+	color: #000000;
+    float: left;
+    margin: 5px 0px;
+    font-size: 16px;
+}
+
+.botoes{
+    padding: 15px 16px;
+    display: inline-block;
+    background-color: #e74c3c;
+    border: 0px solid;
+    color: white;
+    text-decoration: none;
+    text-align:center;
+    font-size: 12px;
+}
+
+.botoes:hover{
+    background-color: #222222;
+}
+
+form{
+	margin-top: 5%;
+	font-size: 26px;
+}
