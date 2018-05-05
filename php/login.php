@@ -14,9 +14,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cadastro - Filminhos</title>
+    <title>Login - Filminhos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/cadastro.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/padrao.css" />
     <script src="js/index.js"></script>
 </head>
@@ -56,8 +56,8 @@
                 <?php
             }else{
                 ?>
-                <li class="contHeaderDir"><a href="login.php">LOGIN</a></li>
-                <li class="contHeaderDir"><a class="active" href="cadastro.php">CADASTRE-SE</a></li>
+                <li class="contHeaderDir"><a class="active" href="login.php">LOGIN</a></li>
+                <li class="contHeaderDir"><a href="cadastro.php">CADASTRE-SE</a></li>
                 <?php
             }
         ?>
@@ -71,20 +71,12 @@
     </ul>
     <!-- FIM DO HEADER -->
 
-    <form class="formCadastro" action="concluicadastro.php" method="POST">
+    <form class="formLogin" action="concluilogin.php" method="POST">
 	    <table align="center" bgcolor="#969fa3" class="tabela">
             <tr>
                 <td colspan="2">
-                    <center><h1 class="titulo">CRIE SUA CONTA</h1></center>
+                    <center><h1 class="titulo">FAÇA SEU LOGIN</h1></center>
                 </td>
-            </tr>
-            <tr>
-                <td><label class="descricao">NOME:</label></td>
-                <td><input type="text" name="nome" class="inputs"></td>
-            </tr>
-            <tr>
-                <td><label class="descricao">SOBRENOME:</label></td>
-                <td><input type="text" name="sobrenome" class="inputs"></td>
             </tr>
             <tr>
                 <td><label class="descricao">E-MAIL:</label></td>
@@ -94,13 +86,13 @@
                 <td><label class="descricao">SENHA:</label></td>
                 <td><input type="password" name="senha" class="inputs"></td>
             </tr>
-	
+	<!-- O LOREN É LINDO -->
             <tr>
                 <td colspan="2">
-                    <center><button type="submit" class="botoes">CRIAR</button></center>
+                    <center><button type="submit" class="botoes">LOGIN</button></center>
                 </td>
             </tr>
-        </table>
+        </table></center>
     </form>
 </body>
 </html>
