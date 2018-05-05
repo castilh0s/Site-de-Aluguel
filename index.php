@@ -1,7 +1,7 @@
-<!-- setando o tipo de conteúdo e iniciando a sessão para futuras verificações -->
 <?php
-    header("Content-type: text/html; charset=utf-8");
+    ob_start();
     session_start();
+    header("Content-type: text/html; charset=utf-8");
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
 
                 $comando   = "SELECT * FROM generos ORDER BY descGenero ASC";
                 $resultado = mysqli_query($conexao, $comando);
-                $linhas    = mysqli_num_rows($resultado);
+                //$linhas    = mysqli_num_rows($resultado);
                 $arrayGen  = array();
 
                 while($u = mysqli_fetch_assoc($resultado)){
@@ -69,3 +69,7 @@
     
 </body>
 </html>
+
+<?php
+    ob_end_flush();
+?>
