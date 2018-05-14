@@ -1,18 +1,30 @@
 <?php
+session_start();
 include("conexao.php");
 
 $email     = $_POST['email'];
 $senha     = $_POST['senha'];
 $senhaHash = hash('sha256', $senha);
 
-$comando = "SELECT * FROM usuarios WHERE emailUsuarios ='{$email}' AND senhaUsuarios = '{$senhaHash}' AND ativoUsuarios = 1";
+$comandoUsuario   = "SELECT * FROM usuarios WHERE emailUsuarios ='{$email}' AND senhaUsuarios = '{$senhaHash}' AND ativoUsuarios = 1";
+$resultadoUsuario = mysqli_query($conexao, $comandoUsuario   );
+$usuarioRetorno   = mysqli_fetch_assoc($resultadoUsuario);
 
-$resultado = mysqli_query($conexao, $comando);
-$usuarioRetorno = mysqli_fetch_assoc($resultado);
+$comando = "SELECT choris, projetos FROM usuarios WHERE emailUsuarios ='{$email}' AND senhaUsuarios = '{$senhaHash}' AND ativoUsuarios = 1";
+$resultado = $conexao->query($comando) OR trigger_error($conexao->error, E_USER_ERROR);
 
-echo $email;
-echo $senhaHash;
-echo $usuarioRetorno;
+while($usuario = $resultado->fetch_object()){
+	if($usuario->choris == 1){
+		$_SESSION['choris'] = 1;
+	}else{
+		$_SESSION['choris'] = 0;
+	}
+	if($usuario->projetos== 1){
+		$_SESSION['projetos'] = 1;
+	}else{
+		$_SESSION['projetos'] = 0;
+	}
+}
 
 if($usuarioRetorno == ""){
 	echo "<script>
@@ -20,10 +32,11 @@ if($usuarioRetorno == ""){
 	location.href='login.php';
 	</script>";
 }else{
-	session_start();
 	$_SESSION['emailUsuario']  = $email;
 	$_SESSION['usuarioLogado'] = 1;
-	//redirecionando para paginaPrincipal.php
-	header("Location: ../index.php");
+	echo "<script>
+	alert('Usuário logado com sucesso!');
+	location.href='../index.php';
+	</script>";
 }
 ?>

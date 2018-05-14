@@ -12,6 +12,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119029375-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119029375-1');
+    </script>
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Cadastro - Filminhos</title>
@@ -22,7 +32,7 @@
 </head>
 <body>
     <ul class="header">
-        <li class="contHeader"><a href="index.php">HOME</a></li>
+        <li class="contHeader"><a href="../index.php">HOME</a></li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">GÊNEROS</a>
             <div class="dropdown-content">

@@ -27,7 +27,7 @@
 	    if($resultado == true){
 		    echo "<script>
     		    alert('Usuário cadastrado com sucesso!');
-	    	    location.href = '../index.php';
+	    	    location.href = 'login.php';
 		    </script>";
 	    }else{
 		    echo "<script>
